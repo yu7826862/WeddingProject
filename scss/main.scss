@@ -1,0 +1,103 @@
+@charset "UTF-8";
+html, body {
+  height: 100%;
+  min-width: 1280px;
+}
+
+.body_div {
+  position: relative;
+  width: 100%;
+  background: black;
+  height: 100%;
+
+  ul {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 50px;
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    width: 90%;
+
+    &:after{
+      content: '';
+      border: 2px solid #f44983;
+      position: absolute;
+      bottom: 0px;
+      width: 80px;
+      left: 350px;
+    }
+  }
+
+  li {
+    //display: inline-block;
+    font-family: "微软雅黑";
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 40px;
+    float: left;
+    color: #fff;
+
+    a{
+      display: inline-block;
+      line-height: 40px;
+      width: 100%;
+      font-style: normal;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  section {
+    height: 100%;
+    position: relative;
+  }
+
+  .li_logo a{
+    display: inline-block;
+    height: 60px;
+    width: 270px;
+    background: url("http://mt-ui.qiniudn.com/lovewith_logo.png") no-repeat;
+  }
+
+  .li_button {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0 0 50px;
+    color: #ffffff;
+    padding-left: 0px;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    float: right;
+
+    &:hover {
+      background: #f44983;
+    }
+
+    &:last-child {
+      background: #f44983;
+    }
+  }
+
+  .li_search{
+    width: 200px;
+    height: 30px;
+    line-height: 60px;
+    background: red;
+    position: relative;
+    margin: 15px 0 0 50px;
+
+    span{
+      display: block;
+      float: left;
+    }
+  }
+
+}
+
+.section_title {
+  line-height: 50px;
+}
