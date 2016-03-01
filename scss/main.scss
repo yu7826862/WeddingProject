@@ -1,14 +1,24 @@
 @charset "UTF-8";
+@import "mixin";
+@import "style";
+$pink_color:#f44983;
+
 html, body {
   height: 100%;
   min-width: 1280px;
+
 }
 
 .body_div {
   position: relative;
   width: 100%;
-  background: black;
+  //background: black;
   height: 100%;
+}
+
+.section_title {
+  line-height: 50px;
+  background: black;
 
   ul {
     display: inline-block;
@@ -20,7 +30,7 @@ html, body {
     margin-top: 30px;
     width: 90%;
 
-    &:after{
+    &:after {
       content: '';
       border: 2px solid #f44983;
       position: absolute;
@@ -39,7 +49,7 @@ html, body {
     float: left;
     color: #fff;
 
-    a{
+    a {
       display: inline-block;
       line-height: 40px;
       width: 100%;
@@ -54,7 +64,7 @@ html, body {
     position: relative;
   }
 
-  .li_logo a{
+  .li_logo a {
     display: inline-block;
     height: 60px;
     width: 270px;
@@ -82,22 +92,177 @@ html, body {
     }
   }
 
-  .li_search{
+  .li_search {
     width: 200px;
     height: 30px;
     line-height: 60px;
-    background: red;
+    background: #9b9b9b;
+    @include opacity(0.3);
+    padding-left: 0px;
+    border-radius: 15px;
     position: relative;
     margin: 15px 0 0 50px;
 
-    span{
-      display: block;
+    span {
+      display: inline-block;
       float: left;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    a {
+      width: 30px;
+      display: inline-block;
+      float: left;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .search_type {
+      width: 50px;
+      line-height: 30px;
+      margin-left: 10px;
+
+      i {
+        padding-left: 10px;
+        line-height: 30px;
+      }
+    }
+
+    .choice {
+      margin-top: 10px;
+      height: 0;
+      width: 0;
+      /*transparent三角形*/
+      border: 10px solid transparent;
+      border-top-color: white;
+      margin-left: -3px;
+    }
+
+    .input {
+      width: 80px;
+      padding-left: 10px;
+      background: transparent;
+
+      @include opacity(0.5);
+
+      input {
+        width: 80px;
+        background: transparent;
+        border: none;
+        line-height: 30px;
+
+        &::-webkit-input-placeholder {
+          color: #ffffff;
+          font-weight: 800;
+          font-size: 16px;
+        }
+      }
     }
   }
-
 }
 
-.section_title {
-  line-height: 50px;
+.main_page {
+  background: black;
+  height: 100%;
+  color: white;
+
+  .page_information {
+    position: relative;
+    left: 100px;
+    top: 100px;
+    width: 600px;
+    height: 300px;
+
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
+    }
+
+    p {
+      display: block;
+      font-size: 24px;
+      font-weight: 800;
+      padding-left: 5px;
+
+      &:nth-last-child(4) {
+        padding-top: 40px;
+      }
+    }
+
+    .page_button {
+      padding: 50px 10px 0 10px;
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        width: 180px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        font-weight: 500;
+        border-radius: 25px;
+        border: 1px solid #ffffff;
+        margin-left: 20px;
+
+        &:first-child {
+          border: 1px solid #f44983;
+          background: #f44983;
+        }
+
+        &:last-child {
+          &:hover {
+            border: 1px solid #f44983;
+            background: #f44983;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main_feature {
+  height: 40%;
+  text-align: center;
+
+  div {
+    width: 80%;
+    display: inline-block;
+    margin: 100px auto;
+
+    @extend .font_family;
+
+    a {
+      margin-left: 120px;
+      display: inline-block;
+      width: 300px;
+      text-decoration: none;
+      background: black;
+
+
+      &:first-child {
+        margin-left: 0px;
+      }
+
+      &:before {
+        text-align: center;
+        content: "";
+        font-size: 40px;
+        background: white;
+        border: 2px solid $pink_color;
+        border-radius: 40px;
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0px auto;
+      }
+    }
+
+    .button_find{
+      @extend .icon-magnifier;
+    }
+  }
 }

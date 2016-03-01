@@ -1,4 +1,32 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?1myv2h");
+  src: url("fonts/icomoon.eot?1myv2h#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?1myv2h") format("truetype"), url("fonts/icomoon.woff?1myv2h") format("woff"), url("fonts/icomoon.svg?1myv2h#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"], .font_family, .main_feature div {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-magnifier:before, .main_feature div .button_find:before {
+  content: "\e902"; }
+
+.icon-search2:before {
+  content: "\e901"; }
+
+.icon-search:before {
+  content: "\e900"; }
+
 html, body {
   height: 100%;
   min-width: 1280px; }
@@ -6,9 +34,12 @@ html, body {
 .body_div {
   position: relative;
   width: 100%;
-  background: black;
   height: 100%; }
-  .body_div ul {
+
+.section_title {
+  line-height: 50px;
+  background: black; }
+  .section_title ul {
     display: inline-block;
     height: 60px;
     line-height: 60px;
@@ -17,36 +48,36 @@ html, body {
     position: relative;
     margin-top: 30px;
     width: 90%; }
-    .body_div ul:after {
+    .section_title ul:after {
       content: '';
       border: 2px solid #f44983;
       position: absolute;
       bottom: 0px;
       width: 80px;
       left: 350px; }
-  .body_div li {
+  .section_title li {
     font-family: "微软雅黑";
     font-weight: 500;
     font-size: 16px;
     padding-left: 40px;
     float: left;
     color: #fff; }
-    .body_div li a {
+    .section_title li a {
       display: inline-block;
       line-height: 40px;
       width: 100%;
       font-style: normal;
       text-decoration: none;
       color: #fff; }
-  .body_div section {
+  .section_title section {
     height: 100%;
     position: relative; }
-  .body_div .li_logo a {
+  .section_title .li_logo a {
     display: inline-block;
     height: 60px;
     width: 270px;
     background: url("http://mt-ui.qiniudn.com/lovewith_logo.png") no-repeat; }
-  .body_div .li_button {
+  .section_title .li_button {
     position: relative;
     width: 100px;
     height: 40px;
@@ -57,22 +88,131 @@ html, body {
     border-radius: 20px;
     border: 1px solid #ffffff;
     float: right; }
-    .body_div .li_button:hover {
+    .section_title .li_button:hover {
       background: #f44983; }
-    .body_div .li_button:last-child {
+    .section_title .li_button:last-child {
       background: #f44983; }
-  .body_div .li_search {
+  .section_title .li_search {
     width: 200px;
     height: 30px;
     line-height: 60px;
-    background: red;
+    background: #9b9b9b;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    padding-left: 0px;
+    border-radius: 15px;
     position: relative;
     margin: 15px 0 0 50px; }
-    .body_div .li_search span {
-      display: block;
-      float: left; }
+    .section_title .li_search span {
+      display: inline-block;
+      float: left;
+      line-height: 30px;
+      text-align: center; }
+    .section_title .li_search a {
+      width: 30px;
+      display: inline-block;
+      float: left;
+      line-height: 30px;
+      text-align: center; }
+    .section_title .li_search .search_type {
+      width: 50px;
+      line-height: 30px;
+      margin-left: 10px; }
+      .section_title .li_search .search_type i {
+        padding-left: 10px;
+        line-height: 30px; }
+    .section_title .li_search .choice {
+      margin-top: 10px;
+      height: 0;
+      width: 0;
+      /*transparent三角形*/
+      border: 10px solid transparent;
+      border-top-color: white;
+      margin-left: -3px; }
+    .section_title .li_search .input {
+      width: 80px;
+      padding-left: 10px;
+      background: transparent;
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+      .section_title .li_search .input input {
+        width: 80px;
+        background: transparent;
+        border: none;
+        line-height: 30px; }
+        .section_title .li_search .input input::-webkit-input-placeholder {
+          color: #ffffff;
+          font-weight: 800;
+          font-size: 16px; }
 
-.section_title {
-  line-height: 50px; }
+.main_page {
+  background: black;
+  height: 100%;
+  color: white; }
+  .main_page .page_information {
+    position: relative;
+    left: 100px;
+    top: 100px;
+    width: 600px;
+    height: 300px; }
+    .main_page .page_information h1 {
+      font-size: 64px;
+      font-weight: 800; }
+    .main_page .page_information p {
+      display: block;
+      font-size: 24px;
+      font-weight: 800;
+      padding-left: 5px; }
+      .main_page .page_information p:nth-last-child(4) {
+        padding-top: 40px; }
+    .main_page .page_information .page_button {
+      padding: 50px 10px 0 10px; }
+      .main_page .page_information .page_button a {
+        display: inline-block;
+        text-decoration: none;
+        width: 180px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-family: "微软雅黑";
+        font-weight: 500;
+        border-radius: 25px;
+        border: 1px solid #ffffff;
+        margin-left: 20px; }
+        .main_page .page_information .page_button a:first-child {
+          border: 1px solid #f44983;
+          background: #f44983; }
+        .main_page .page_information .page_button a:last-child:hover {
+          border: 1px solid #f44983;
+          background: #f44983; }
+
+.main_feature {
+  height: 40%;
+  text-align: center; }
+  .main_feature div {
+    width: 80%;
+    display: inline-block;
+    margin: 100px auto; }
+    .main_feature div a {
+      margin-left: 120px;
+      display: inline-block;
+      width: 300px;
+      text-decoration: none;
+      background: black; }
+      .main_feature div a:first-child {
+        margin-left: 0px; }
+      .main_feature div a:before {
+        text-align: center;
+        content: "";
+        font-size: 40px;
+        background: white;
+        border: 2px solid #f44983;
+        border-radius: 40px;
+        width: 80px;
+        height: 80px;
+        display: block;
+        margin: 0px auto; }
 
 /*# sourceMappingURL=main.css.map */
