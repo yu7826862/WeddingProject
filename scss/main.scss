@@ -1,7 +1,9 @@
 @charset "UTF-8";
 @import "mixin";
 @import "style";
-$pink_color:#f44983;
+
+$pink_color: #f44983;
+$font_color_light: #B1AABC;
 
 html, body {
   height: 100%;
@@ -12,8 +14,13 @@ html, body {
 .body_div {
   position: relative;
   width: 100%;
-  //background: black;
   height: 100%;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+  }
 }
 
 .section_title {
@@ -50,11 +57,9 @@ html, body {
     color: #fff;
 
     a {
-      display: inline-block;
       line-height: 40px;
       width: 100%;
       font-style: normal;
-      text-decoration: none;
       color: #fff;
     }
   }
@@ -65,7 +70,6 @@ html, body {
   }
 
   .li_logo a {
-    display: inline-block;
     height: 60px;
     width: 270px;
     background: url("http://mt-ui.qiniudn.com/lovewith_logo.png") no-repeat;
@@ -194,12 +198,9 @@ html, body {
       padding: 50px 10px 0 10px;
 
       a {
-        display: inline-block;
-        text-decoration: none;
         width: 180px;
         height: 50px;
         line-height: 50px;
-        text-align: center;
         color: white;
         font-size: 16px;
         font-family: "微软雅黑";
@@ -225,11 +226,11 @@ html, body {
 }
 
 .main_feature {
-  height: 40%;
+  height: 450px;
   text-align: center;
+  border-bottom: 1px solid #66667d;
 
   div {
-    width: 80%;
     display: inline-block;
     margin: 100px auto;
 
@@ -237,32 +238,166 @@ html, body {
 
     a {
       margin-left: 120px;
-      display: inline-block;
-      width: 300px;
-      text-decoration: none;
-      background: black;
-
+      display: block;
+      float: left;
+      width: 210px;
+      height: 230px;
+      color: $font_color_light;
+      font-weight: 500;
+      position: relative;
+      top: 0;
 
       &:first-child {
         margin-left: 0px;
       }
 
-      &:before {
+      span {
         text-align: center;
-        content: "";
-        font-size: 40px;
-        background: white;
         border: 2px solid $pink_color;
-        border-radius: 40px;
+        border-radius: 42px;
         width: 80px;
         height: 80px;
-        display: block;
         margin: 0px auto;
+        display: block;
+        background: white;
+        line-height: 80px;
+
+        &:before {
+          content: "";
+          font-size: 40px;
+          color: $pink_color;
+        }
+      }
+
+      h1 {
+        font-size: 21px;
+        padding-top: 30px;
+        color: #66667d;
+      }
+
+      p {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      &:hover {
+        span {
+          background: $pink_color;
+
+          &:before {
+            color: white;
+          }
+        }
       }
     }
 
-    .button_find{
-      @extend .icon-magnifier;
+    .button_find {
+      span {
+        @extend .icon-magnifier;
+      }
+    }
+
+    .button_invitation {
+      span {
+        @extend .icon-home;
+      }
+    }
+
+    .button_server {
+      span {
+        @extend .icon-calendar;
+      }
+    }
+  }
+}
+
+.section_recommend {
+  height: 100%;
+  text-align: center;
+
+  .recommend_city {
+    margin: 50px auto 20px auto;
+    width: 600px;
+    color: $font_color_light;
+
+    h1 {
+      margin-top: 50px;
+      font-size: 37px;
+      font-weight: 800;
+      color: #333333;
+      padding-bottom: 15px;
+    }
+
+    span {
+      display: block;
+      width: 35px;
+      border: 2px solid $pink_color;
+      margin: auto;
+    }
+
+    p {
+      display: block;
+      padding-top: 15px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    div {
+      padding-top: 40px;
+
+      a {
+        color: $font_color_light;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 8px;
+        border: 1px solid $font_color_light;
+        font-size: 13px;
+        font-weight: 500;
+        margin-left: 10px;
+
+        &:hover {
+          color: $pink_color;
+          border-color: $pink_color;
+        }
+      }
+
+      .city_active {
+        color: white;
+        background: $pink_color;
+        border-color: $pink_color;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .recommend_pic {
+    height: 60%;
+    a {
+      width: 30%;
+      padding-bottom: 30%;
+      height: 0;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        padding-bottom: 30%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        @include transition(all 500ms ease);
+
+      }
+
+      &:hover {
+        img {
+          @include transform(scale(1.05));
+          @include opacity(0.7);
+        }
+      }
     }
   }
 }
